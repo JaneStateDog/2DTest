@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dctsfa1p32hfu"]
+
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_mfft8"]
+[ext_resource type="Texture2D" uid="uid://dmsupsqy4bh8k" path="res://Sprites/player.png" id="2_6fkpn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gmyhc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmrru"]
+size = Vector2(32, 32)
+
+[node name="Player" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_gmyhc")
+max_contacts_reported = 1
+contact_monitor = true
+can_sleep = false
+script = ExtResource("1_mfft8")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xmrru")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_6fkpn")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

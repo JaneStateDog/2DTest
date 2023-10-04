@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdyq8yd3m0btx"]
+
+[ext_resource type="Texture2D" uid="uid://drdf5vg5q78cn" path="res://Sprites/square.png" id="1_lkmch"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5tibs"]
+rough = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28qh1"]
+size = Vector2(32, 32)
+
+[node name="Square" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_5tibs")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_lkmch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_28qh1")

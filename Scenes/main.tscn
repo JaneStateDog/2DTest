@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4r8w3bvj2og6"]
+
+[ext_resource type="PackedScene" uid="uid://dctsfa1p32hfu" path="res://Scenes/player.tscn" id="1_tkf5l"]
+[ext_resource type="PackedScene" uid="uid://bdyq8yd3m0btx" path="res://Scenes/square.tscn" id="2_b0op5"]
+[ext_resource type="PackedScene" uid="uid://5xbufyjb27kk" path="res://Scenes/bounce.tscn" id="3_drrsx"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_tkf5l")]
+position = Vector2(528, 344)
+
+[node name="Square" parent="." instance=ExtResource("2_b0op5")]
+position = Vector2(544, 512)
+scale = Vector2(27.532, 1)
+
+[node name="Square2" parent="." instance=ExtResource("2_b0op5")]
+position = Vector2(728, 304)
+scale = Vector2(7.36, 1)
+
+[node name="Square3" parent="." instance=ExtResource("2_b0op5")]
+position = Vector2(264, 368)
+scale = Vector2(7.36, 1)
+
+[node name="Bounce" parent="." instance=ExtResource("3_drrsx")]
+position = Vector2(440, 504)
+scale = Vector2(4.16, 1)
